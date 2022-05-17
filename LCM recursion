@@ -1,0 +1,25 @@
+#include<stdio.h>
+lcm(a,b);                   //The user defined function is mentioned
+int main()
+{
+    int a,b;              //Memory space is created
+    printf("Enter a =");   //Values are recieved and stored
+    scanf("%d",&a);
+    printf("Enter b =");
+    scanf("%d",&b);
+    printf("LCM = %d",lcm(a,b));  //the function is called
+}
+int lcm(a,b)
+{
+    static int i=1;            
+    if (i%a==0 && i%b==0)     //The recieved values are checked for LCM
+    {
+        return i;
+    }
+    else
+    {
+        i++;
+        lcm(a,b);            //Recursion
+        return i;
+    }
+}
